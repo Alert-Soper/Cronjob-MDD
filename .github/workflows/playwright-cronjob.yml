@@ -25,10 +25,10 @@ jobs:
         run: npx playwright install
 
      # - name: Run Playwright script
-     #   run: npx test miniotosheet.spec.ts
+     #   run: npx playwright test miniotosheet.spec.ts
               
       - name: Run Playwright script
         run: |
           echo "Starting Playwright script..."
-          npx test miniotosheet.spec.ts
+          npx playwright test miniotosheet.spec.ts
           echo "Playwright script finished."
