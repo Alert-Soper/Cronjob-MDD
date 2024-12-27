@@ -1,0 +1,29 @@
+name: Playwright Daily Cronjob
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # รันทุกวันเวลา 00:00 UTC (เวลาไทยคือ 07:00)
+
+jobs:
+  run-playwright:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Playwright browsers
+        run: npx playwright install
+
+      - name: Run Playwright script
+        run: npx test miniotosheet.spec.ts
+
+
