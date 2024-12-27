@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",              // เลือก target ให้เป็น ES2020
+    "module": "commonjs",            // เลือก module system ที่เหมาะสม
+    "strict": true,                  // เปิด strict mode
+    "esModuleInterop": true,         // รองรับการทำงานร่วมกับ CommonJS
+    "skipLibCheck": true,            // ข้ามการตรวจสอบไฟล์ไลบรารี
+    "forceConsistentCasingInFileNames": true  // ตรวจสอบให้ชื่อไฟล์ใช้ casing ที่เหมือนกัน
+  },
+  "include": [
+    "Cronjob-MDD/**/*.ts"  // ระบุไฟล์ TypeScript ที่ต้องการคอมไพล์
+  ]
+}
