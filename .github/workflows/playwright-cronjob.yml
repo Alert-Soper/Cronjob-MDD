@@ -3,7 +3,7 @@ name: Playwright Daily Cronjob
 on:
   schedule:
     - cron: "0 0 * * *" # รันทุกวันเวลา 00:00 UTC (เวลาไทยคือ 07:00)
-
+    workflow_dispatch: # เพิ่ม trigger นี้เพื่อให้สามารถรันด้วยตนเองได้
 jobs:
   run-playwright:
     runs-on: ubuntu-latest
