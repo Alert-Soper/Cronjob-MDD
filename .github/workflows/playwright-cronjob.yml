@@ -24,11 +24,5 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install
 
-     # - name: Run Playwright script
-     #   run: npx playwright test miniotosheet.spec.ts
-              
       - name: Run Playwright script
-        run: |
-          echo "Starting Playwright script..."
-          npx playwright test miniotosheet.spec.ts
-          echo "Playwright script finished."
+        run: npx playwright test miniotosheet.spec.ts
