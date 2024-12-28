@@ -4,7 +4,8 @@ on:
   push:
     branches:
       - main
-
+  workflow_dispatch:  # ทำให้สามารถรัน workflow ได้ด้วยตนเอง
+     
 jobs:
   test:
     runs-on: ubuntu-22.04 # หรือ ubuntu-24.04 ถ้าพร้อมเปลี่ยน
