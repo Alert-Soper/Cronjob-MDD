@@ -1,28 +1,23 @@
-name: Playwright Daily Cronjob
+name: Playwright Test
 
 on:
-  schedule:
-    - cron: "0 0 * * *" # รันทุกวันเวลา 00:00 UTC (เวลาไทยคือ 07:00)
-  workflow_dispatch: # เพิ่ม trigger นี้เพื่อให้สามารถรันด้วยตนเองได้
+  push:
+    branches:
+      - main
 
 jobs:
-  run-playwright:
-    runs-on: ubuntu-latest
+  test:
+    runs-on: ubuntu-22.04 # หรือ ubuntu-24.04 ถ้าพร้อมเปลี่ยน
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+    - name: Install dependencies
+      run: npm install
 
-      - name: Install dependencies
-        run: npm install
+    - name: Install Playwright browsers
+      run: npx playwright install
 
-      - name: Install Playwright browsers
-        run: npx playwright install
-
-      - name: Run Playwright script
-        run: npx playwright test miniotosheet.spec.ts
+    - name: Run Playwright tests
+      run: npx playwright test
