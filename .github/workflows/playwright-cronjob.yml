@@ -1,9 +1,11 @@
 name: Playwright Daily Cronjob
 
 on:
+  schedule:
+    - cron: '0 18 * * *'  # เวลา 01:00 AM ตามเวลาไทย (UTC+7)
   push:
     branches:
-      - main
+    - main
   workflow_dispatch:  # ทำให้สามารถรัน workflow ได้ด้วยตนเอง
      
 jobs:
