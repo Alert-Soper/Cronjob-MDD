@@ -20,7 +20,7 @@
   "dependencies": {
   "playwright": "^1.49.1",
   "typescript": "^5.7.2",
-  "googleapis": "^123.0.0" // หรือเวอร์ชันล่าสุด
+  "googleapis": "^123.0.0"
 },
   "devDependencies": {
     "@playwright/test": "^1.49.1"
