@@ -20,12 +20,9 @@ jobs:
     - name: Install Playwright browsers
       run: npx playwright install
     
-    - name: Create Service Account Key file
+    - name: Decode Service Account Key from encoded_key.txt
       run: |
-        mkdir -p tests
-        echo $SERVICE_ACCOUNT_KEY | base64 -d > /tests/service-operation-439703-9bc8c8165988.json
-      env:
-        SERVICE_ACCOUNT_KEY: ${{ secrets.SERVICE_ACCOUNT_KEY }}
-
+        base64 -d tests/encoded_key.txt > tests/service-operation-439703-9bc8c8165988.json
+        
     - name: Run Playwright tests
       run: npx playwright test
