@@ -25,7 +25,7 @@ test('test', async ({ page }) => {
     console.log('Data:', data);
     
     const SPREADSHEET_ID = '1vLEL0J_xnhqa6ImjxwZBb6LqamgV5QNRpGZ3Zu6XnpY'; // แทนที่ด้วย ID ของ Google Sheet
-    const SERVICE_ACCOUNT_FILE = '/Users/kaweephat/my-playwright-project/tests/service-operation-439703-9bc8c8165988.json'; // แทนที่ด้วยที่อยู่ของไฟล์ JSON
+    const SERVICE_ACCOUNT_FILE = '/tests/service-operation-439703-9bc8c8165988.json'; // แทนที่ด้วยที่อยู่ของไฟล์ JSON
 
     async function getAuth() {
         const auth = new google.auth.GoogleAuth({
