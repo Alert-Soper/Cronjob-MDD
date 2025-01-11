@@ -7,7 +7,7 @@ on:
     branches:
     - main
   workflow_dispatch:  # ทำให้สามารถรัน workflow ได้ด้วยตนเอง
-     
+
 jobs:
   test:
     runs-on: ubuntu-22.04 # หรือ ubuntu-24.04 ถ้าพร้อมเปลี่ยน
@@ -21,10 +21,10 @@ jobs:
 
     - name: Install Playwright browsers
       run: npx playwright install
-    
+
     - name: Decode Service Account Key from encoded_key.txt
       run: |
         base64 -d tests/encoded_key.txt > tests/service-operation-439703-9bc8c8165988.json
-        
+
     - name: Run Playwright tests
       run: npx playwright test
